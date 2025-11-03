@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Empresa: Matemática STEM para o ENEM com IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Nova Paleta de Cores:
+        * Fundo Principal: #0a192f (Azul Marinho Escuro - quase preto, remete a tecnologia)
+        * Destaque (Texto/Bordas): #64ffda (Ciano Vívido - futurista, energia)
+        * Texto Geral: #ccd6f6 (Cinza Claro Azulado - legível em fundo escuro)
+        * Fundo Secundário/Elementos: #112240 (Azul Marinho Médio)
+        * CTA (Botão): #64ffda (Ciano Vívido) com hover mais escuro
+        */
+        body {
+            font-family: 'Montserrat', sans-serif; /* Fonte moderna para títulos */
+            margin: 0;
+            padding: 0;
+            background-color: #0a192f; /* Azul Marinho Escuro */
+            color: #ccd6f6; /* Texto claro para contraste */
+            line-height: 1.7;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        header {
+            background-color: #0a192f; /* Mesmo fundo do body */
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 3px solid #64ffda; /* Linha de destaque ciano */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3.8em;
+            letter-spacing: 2px;
+            color: #64ffda; /* Título principal em ciano vívido */
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.5); /* Leve brilho */
+        }
+        header p {
+            margin-top: 15px;
+            font-size: 1.6em;
+            font-weight: 400;
+            color: #ccd6f6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            overflow: hidden;
+            padding: 0;
+        }
+        .section {
+            background: #112240; /* Fundo secundário para as seções */
+            padding: 40px;
+            margin-bottom: 35px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #64ffda; /* Borda lateral ciano */
+        }
+        .section h2 {
+            color: #64ffda; /* Títulos de seção em ciano */
+            font-family: 'Roboto Mono', monospace; /* Fonte mono para um toque tech */
+            font-size: 2.2em;
+            border-bottom: 2px solid rgba(100, 255, 218, 0.3); /* Linha sutil */
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .section p {
+            font-size: 1.15em;
+            margin-bottom: 15px;
+            color: #ccd6f6;
+        }
+        /* Estilização para as Listas de Destaque */
+        .feature-list, .section ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .feature-list li, .section ul li {
+            background: rgba(100, 255, 218, 0.08); /* Fundo muito sutil de ciano */
+            padding: 25px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            color: #ccd6f6;
+        }
+        .feature-list li::before, .section ul li::before {
+            content: '›'; /* Marcador personalizado */
+            color: #64ffda;
+            position: absolute;
+            left: 10px;
+            font-size: 1.5em;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.7;
+        }
+        .feature-list li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.2);
+            background: rgba(100, 255, 218, 0.15);
+        }
+        .feature-list li span, .section ul li span {
+            font-weight: 700;
+            color: #64ffda; /* Palavras-chave em ciano */
+            margin-left: 20px; /* Espaçamento para o marcador */
+            display: block; /* Para o texto começar na linha de baixo */
+        }
+        .feature-list li strong, .section ul li strong {
+            color: #64ffda;
+        }
+
+        /* Chamada para Ação (CTA) */
+        .cta {
+            text-align: center;
+            padding: 60px 40px;
+            background-color: #0a192f; /* Fundo escuro para o CTA também */
+            color: white;
+            border-radius: 10px;
+            margin-top: 50px;
+            border: 2px solid #64ffda; /* Borda ciano para destaque */
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.4);
+        }
+        .cta h3 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #64ffda;
+            font-weight: 700;
+        }
+        .cta p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #ccd6f6;
+        }
+        .cta a {
+            background-color: #64ffda; /* Botão em ciano vívido */
+            color: #0a192f; /* Texto do botão em azul marinho escuro */
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 5px; /* Botão ligeiramente arredondado */
+            font-weight: 700;
+            font-size: 1.4em;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            border: 2px solid #64ffda;
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.5); /* Brilho no botão */
+        }
+        .cta a:hover {
+            background-color: #4cd1a4; /* Ciano um pouco mais escuro no hover */
+            color: #000;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.6);
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #0a192f; /* Fundo escuro */
+            color: #556b92; /* Texto do footer mais discreto */
+            margin-top: 60px;
+            font-size: 0.9em;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚀 [Nome da Sua Empresa]</h1>
+        <p>A Revolução da Matemática para o ENEM: <span style="color: #64ffda;">STEM</span> e <span style="color: #64ffda;">Inteligência Artificial</span></p>
+    </header>
+
+    <div class="container">
+
+        <section class="section" id="proposta">
+            <h2>✨ Nossa Proposta de Valor</h2>
+            <p>Transformamos a forma como você estuda Matemática para o vestibular. Focamos no modelo **STEM** (Ciência, Tecnologia, Engenharia e Matemática) para construir uma base sólida e aplicável, garantindo que você não apenas memorize, mas **realmente entenda** o conteúdo e a lógica por trás dele.</p>
+        </section>
+
+        <section class="section" id="ia-enem">
+            <h2>🧠 Inteligência Artificial Focada no ENEM</h2>
+            <p>O coração do nosso método é a IA. Ela trabalha incansavelmente para otimizar seus estudos e garantir o foco máximo na sua aprovação:</p>
+            <ul class="feature-list">
+                <li><span>Análise de Questões do ENEM:</span> A IA desmembra anos de provas para identificar os tópicos, habilidades e competências mais recorrentes, antecipando o que realmente importa.</li>
+                <li><span>Criação de Conteúdo Personalizado:</span> Para cada questão que você erra, a IA gera automaticamente o **conteúdo exato e na medida** que você precisa estudar: teoria, exemplos detalhados e exercícios práticos.</li>
+                <li><span>Rota de Estudo Otimizada:</span> Chega de perder tempo. Nosso algoritmo traça o caminho mais rápido para sua nota máxima em Matemática, focando nas suas maiores deficiências e nos padrões da prova.</li>
+            </ul>
+        </section>
+
+        <section class="section" id="stem-diferencial">
+            <h2>📐 O Diferencial STEM</h2>
+            <p>A Matemática não existe isoladamente. Nosso currículo integra os conceitos matemáticos com a realidade das outras áreas **STEM**, tornando o aprendizado mais:</p>
+            <ul>
+                <li><span>Relevante:</span> Veja a aplicação da matemática em problemas reais de ciência e engenharia, conectando a teoria com a prática.</li>
+                <li><span>Intuitivo:</span> Entenda o "porquê" por trás das fórmulas, e não apenas o "como", desenvolvendo um raciocínio crítico e duradouro.</li>
+                <li><span>Completo:</span> Prepare-se não só para o ENEM, mas para a base sólida que você precisará na sua carreira universitária e profissional.</li>
+            </ul>
+        </section>
+
+        <div class="cta">
+            <h3>Preparado para Desafiar o ENEM?</h3>
+            <p>Comece a estudar com o poder da IA e a profundidade do STEM. Sua aprovação começa aqui.</p>
+            <a href="#cadastro-link">COMECE AGORA!</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 [Nome da Sua Empresa]. Educação STEM e IA.</p>
+    </footer>
+
+</body>
+</html>
